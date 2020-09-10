@@ -117,4 +117,3 @@ Unsolvable 3x3 puzzle (left) and Multi-solution 3x3 puzzle (right)
 
 Here’s what the tree of possibilities looks like:
 ![Alt text](https://hackernoon.com/hn-images/1*jiyNCSATqMmL6MwcmEISIA.png)
-![Alt text](https://hackernoon.com/hn-images/1*jiyNCSATqMmL6MwcmEISIA.png)
