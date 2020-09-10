@@ -89,7 +89,7 @@ We now select the first spot (1,2) to work with. Since this is a 3x3 grid, we ha
 
 Let’s place number 1 in this spot and see if it fits.
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*eh31JFMgAEq9hxjISklwIA.png">
 </p>
 
@@ -97,7 +97,7 @@ Let’s place number 1 in this spot and see if it fits.
 
 It does. Great. We can now select the next spot on the list (2,2) and do the same thing again. This time however, it fails. We already have a 1 in this row. This means that we must abandon candidate and repeat step 2 with the next number — which is 2.
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*-ZfNe5ATHjC5ew08rlKweg.png">
 </p>
 
@@ -107,14 +107,14 @@ Huzzah! One more spot is filled. Also, it might not look like it, but we did jus
 
 When we move on to spot (2,3), we have another problem. As you can see, we are all out of options. None of the possible numbers fit in. This means that we must now abandon candidate and repeat step 2 with the next number. Only this time, we must visit spot (2,2) first to fix spot (2,3).
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*_ImNrh84gLZVm3yTA1Wh0g.png">
 </p>
 Failure to fill spot (2, 3)
 
 We need to fill number 3 in spot (2,2) and that will resolve the issue.
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*6QuUVfx8BLw9XeaiTCCR8Q.png">
 </p>
 
@@ -124,7 +124,7 @@ We now repeat this process until with either reach the goal or we hit one of the
 
 Since this was a demo problem, it should be obvious that we’d arrive at the solution without any further complications.
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*qcNunCrrxO4zERyRfwNaGg.png">
 </p>
 
@@ -132,7 +132,7 @@ Since this was a demo problem, it should be obvious that we’d arrive at the so
 
 However, consider the same grid with one small change. Replacing the 1 in cell (3,3) with a 2 renders the grid unsolvable. Similarly, removing hints from cells (2,1) and (3,3) allows for multiple solutions. But since this algorithm has a single goal, it stops after the first solution is reached.
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*GOsXsydaPEZXExIKw-Wrxw.png">
 </p>
 
@@ -141,6 +141,6 @@ However, consider the same grid with one small change. Replacing the 1 in cell (
 
 Here’s what the tree of possibilities looks like:
 
-<p>
+<p align="center">
 	<img src="https://hackernoon.com/hn-images/1*jiyNCSATqMmL6MwcmEISIA.png">
 </p>
