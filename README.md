@@ -8,13 +8,14 @@ The most common Sudoku puzzles use a 9x9 grid. The grids are partially filled (w
 	<img src="https://hackernoon.com/hn-images/1*V6o3RVkDbHbwhR3lH_Aq7A.png">
 </p>
 
-An unsolved 9x9 Sudoku puzzle. The bold numbers are the hints.
+#### An unsolved 9x9 Sudoku puzzle. The bold numbers are the hints.
 And here’s the solution. Notice how each row, each column and each sub-grid have all numbers from 1 to 9. Some puzzles may even have multiple solutions.
 
-![Alt text](https://hackernoon.com/hn-images/1*uT1D1ZgbzNuJU_Q_X1Tl4A.png)
+<p align="center">
+	<img src="https://hackernoon.com/hn-images/1*uT1D1ZgbzNuJU_Q_X1Tl4A.png">
+</p>
 
-
-The solution to above Sudoku puzzle. One row, column and sub-grid have been highlighted.
+#### The solution to above Sudoku puzzle. One row, column and sub-grid have been highlighted.
 Aside: solving a Sudoku puzzle
 Sudoku is a logic-based puzzle. Needless to say, solving one requires a series of logical moves and might require a bit of guesswork. Since this isn’t an article to explore how to solve a Sudoku puzzle, I’ll just a leave a link to one that helped me getting started: kristanix.com/sudokuepic/sudoku-solving-techniques.
 
@@ -30,11 +31,12 @@ The simplest (read ‘dumbest’) implementations often use little to no “logi
 
 A backtracking algorithm can be thought of as a tree of possibilities. In this tree, the root node is the original problem, each node is a candidate and the leaf nodes are possible solution candidates. We traverse the tree depth-first from root to a leaf node to solve the problem.
 
+<p align="center">
+	<img src="https://hackernoon.com/hn-images/1*TBN_HH658zzTtOQCW3g6zQ.png">
+	<img src="https://hackernoon.com/hn-images/1*MJ1Rhf0_xmeT2FJG8p_92Q.png">
+</p>
 
-![Alt text](https://hackernoon.com/hn-images/1*TBN_HH658zzTtOQCW3g6zQ.png)
-![Alt text](https://hackernoon.com/hn-images/1*MJ1Rhf0_xmeT2FJG8p_92Q.png)
-
-Tree of Possibilities for a typical backtracking algorithm
+#### Tree of Possibilities for a typical backtracking algorithm
 The tree diagram also shows 2 groups — Unexplored Possible Candidates and Impossible Candidates.
 
 UPC marks nodes that were never explored. Some of them could have been viable candidates, leading to another solution. Since we never explored them, we can never know. Problems where multiple solutions are acceptable won’t have this group.
@@ -74,8 +76,11 @@ If a solution is found, stop searching. Otherwise, repeat steps 2 to 4.
 Pen-paper demo
 Groovy. Now let’s try all this in practice with a simple 3x3 grid.
 
-![Alt text](https://hackernoon.com/hn-images/1*dFNtAnfevAa9wP-VQ10oXQ.png)
-A 3x3 Sudoku puzzle
+<p align="center">
+	<img src="https://hackernoon.com/hn-images/1*dFNtAnfevAa9wP-VQ10oXQ.png">
+</p>
+
+#### A 3x3 Sudoku puzzle
 
 We start off by listing all the empty spots. If we label each cell in the grid with a pair of numbers (x,y) and mark the first cell (1,1), then our empty spots will be at locations:
 
@@ -84,37 +89,58 @@ We now select the first spot (1,2) to work with. Since this is a 3x3 grid, we ha
 
 Let’s place number 1 in this spot and see if it fits.
 
-![Alt text](https://hackernoon.com/hn-images/1*eh31JFMgAEq9hxjISklwIA.png)
-Filling ‘1’ in spot (1, 2)
+<p>
+	<img src="https://hackernoon.com/hn-images/1*eh31JFMgAEq9hxjISklwIA.png">
+</p>
+
+#### Filling ‘1’ in spot (1, 2)
 
 It does. Great. We can now select the next spot on the list (2,2) and do the same thing again. This time however, it fails. We already have a 1 in this row. This means that we must abandon candidate and repeat step 2 with the next number — which is 2.
 
-![Alt text](https://hackernoon.com/hn-images/1*-ZfNe5ATHjC5ew08rlKweg.png)
-Filling 2 in spot (2, 2)
+<p>
+	<img src="https://hackernoon.com/hn-images/1*-ZfNe5ATHjC5ew08rlKweg.png">
+</p>
+
+#### Filling 2 in spot (2, 2)
 
 Huzzah! One more spot is filled. Also, it might not look like it, but we did just perform backtracking on a single spot. We abandoned a candidate solution (1 at spot (2,2)), visited a previous stage (empty spot (2,2)) and explored a new candidate solution (number 2 at spot (2,2)).
 
 When we move on to spot (2,3), we have another problem. As you can see, we are all out of options. None of the possible numbers fit in. This means that we must now abandon candidate and repeat step 2 with the next number. Only this time, we must visit spot (2,2) first to fix spot (2,3).
 
-![Alt text](https://hackernoon.com/hn-images/1*_ImNrh84gLZVm3yTA1Wh0g.png)
+<p>
+	<img src="https://hackernoon.com/hn-images/1*_ImNrh84gLZVm3yTA1Wh0g.png">
+</p>
 Failure to fill spot (2, 3)
 
 We need to fill number 3 in spot (2,2) and that will resolve the issue.
 
-![Alt text](https://hackernoon.com/hn-images/1*6QuUVfx8BLw9XeaiTCCR8Q.png)
-Backtracking to spot (2, 2) and then re-visiting spot (2, 3)
+<p>
+	<img src="https://hackernoon.com/hn-images/1*6QuUVfx8BLw9XeaiTCCR8Q.png">
+</p>
+
+#### Backtracking to spot (2, 2) and then re-visiting spot (2, 3)
 
 We now repeat this process until with either reach the goal or we hit one of the termination conditions.
 
 Since this was a demo problem, it should be obvious that we’d arrive at the solution without any further complications.
 
-![Alt text](https://hackernoon.com/hn-images/1*qcNunCrrxO4zERyRfwNaGg.png)
-Solved 3x3 Sudoku puzzle
+<p>
+	<img src="https://hackernoon.com/hn-images/1*qcNunCrrxO4zERyRfwNaGg.png">
+</p>
+
+#### Solved 3x3 Sudoku puzzle
 
 However, consider the same grid with one small change. Replacing the 1 in cell (3,3) with a 2 renders the grid unsolvable. Similarly, removing hints from cells (2,1) and (3,3) allows for multiple solutions. But since this algorithm has a single goal, it stops after the first solution is reached.
-![Alt text](https://hackernoon.com/hn-images/1*GOsXsydaPEZXExIKw-Wrxw.png)
-Unsolvable 3x3 puzzle (left) and Multi-solution 3x3 puzzle (right)
+
+<p>
+	<img src="https://hackernoon.com/hn-images/1*GOsXsydaPEZXExIKw-Wrxw.png">
+</p>
+
+#### Unsolvable 3x3 puzzle (left) and Multi-solution 3x3 puzzle (right)
 
 
 Here’s what the tree of possibilities looks like:
-![Alt text](https://hackernoon.com/hn-images/1*jiyNCSATqMmL6MwcmEISIA.png)
+
+<p>
+	<img src="https://hackernoon.com/hn-images/1*jiyNCSATqMmL6MwcmEISIA.png">
+</p>
