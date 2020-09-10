@@ -5,7 +5,7 @@ Sudoku is a number-placement puzzle where the objective is to fill a square grid
 The most common Sudoku puzzles use a 9x9 grid. The grids are partially filled (with hints) to ensure a solution can be reached.
 
 <p align="center">
-![Alt text](https://hackernoon.com/hn-images/1*V6o3RVkDbHbwhR3lH_Aq7A.png)
+	<img src="https://hackernoon.com/hn-images/1*V6o3RVkDbHbwhR3lH_Aq7A.png">
 </p>
 
 An unsolved 9x9 Sudoku puzzle. The bold numbers are the hints.
